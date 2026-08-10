@@ -23,4 +23,10 @@ public class AlunoController {
     public List<AlunoEntity> listarAlunos(){
         return repository.findAll();
     }
+
+    //@PutMapping
+
+
+    //@DeleteMapping
+
 }
