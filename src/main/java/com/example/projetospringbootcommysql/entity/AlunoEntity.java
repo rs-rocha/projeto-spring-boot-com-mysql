@@ -23,6 +23,7 @@ public class AlunoEntity {
                 "estou fazendo meu trabalho de Spring Boot."
                 ;
     }
+    /*
     public int getId() {
         return id;
     }
@@ -30,7 +31,7 @@ public class AlunoEntity {
     public void setId(int id) {
         this.id = id;
     }
-
+    */
     public String getNome() {
         return nome;
     }
