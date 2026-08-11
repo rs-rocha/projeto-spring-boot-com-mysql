@@ -16,6 +16,7 @@ public class AlunoEntity {
     private String emailInstitucional;
     private String turma;
     private String periodo;
+    private String apresentacao;
 
     public String apresentacao(){
         return "Meu nome é " + getNome() + ", " +
