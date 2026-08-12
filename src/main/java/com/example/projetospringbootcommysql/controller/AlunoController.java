@@ -24,9 +24,30 @@ public class AlunoController {
         return repository.findAll();
     }
 
-    //@PutMapping
+    @PutMapping("/{id}")
+    public AlunoEntity atualizarAlunoEntity(
+            @PathVariable Integer id,
+            @RequestBody AlunoEntity alunoAtualizado
+    ){
+        AlunoEntity alunoAtual = repository.findById(id).orElseThrow();
+        alunoAtual.setNome(alunoAtualizado.getNome());
+        alunoAtual.setIdade(alunoAtualizado.getIdade());
+        alunoAtual.setRegistroAluno(alunoAtualizado.getRegistroAluno());
+        alunoAtual.setEmailInstitucional(alunoAtualizado.getEmailInstitucional());
+        alunoAtual.setTurma(alunoAtualizado.getTurma());
+        alunoAtual.setPeriodo(alunoAtualizado.getPeriodo());
+        alunoAtual.setApresentacao(alunoAtualizado.getApresentacao());
 
+        return repository.save(alunoAtual);
+    }
 
-    //@DeleteMapping
-
+    @DeleteMapping("/{id}")
+    public String apagarAlunoEntity(
+            @PathVariable Integer id
+    ){
+        AlunoEntity aluno = repository.findById(id).orElseThrow();
+        String nome = aluno.getNome();
+        repository.deleteById(id);
+        return "Aluno " + nome + "deletado com sucesso!";
+    }
 }
