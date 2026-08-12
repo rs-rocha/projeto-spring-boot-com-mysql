@@ -18,21 +18,15 @@ public class AlunoEntity {
     private String periodo;
     private String apresentacao;
 
-    public String apresentacao(){
-        return "Meu nome é " + getNome() + ", " +
-                "entrei no curso porque quero ser programador e " +
-                "estou fazendo meu trabalho de Spring Boot."
-                ;
-    }
-    /*
-    public int getId() {
-        return id;
+
+    public String getApresentacao() {
+        return apresentacao;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setApresentacao(String apresentacao) {
+        this.apresentacao = apresentacao;
     }
-    */
+
     public String getNome() {
         return nome;
     }
